@@ -1,0 +1,168 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-body {
+    background-color: black;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px;
+    text-align: center;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #39FF14;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.megmercado-title {
+    color: #39FF14;
+    text-decoration: underline;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.footer {
+    text-align: left;
+    margin: 20px;
+}
+
+.autor {
+    color: #39FF14;
+    font-size: 0.8em;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+input[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: darkblue;
+}
+
+.error {
+    color: red;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
+.mensaje {
+    color: red;
+    text-decoration: underline;
+}
+
+.admin {
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.usuario {
+    color: #0021F3;
+    font-weight: bold;
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-list,
+.cart-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item,
+.cart-item {
+    flex: 1 1 calc(33% - 20px);
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-item img,
+.cart-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Enlaces */
+a {
+    color: blue;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .product-item,
+    .cart-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item,
+    .cart-item {
+        flex: 1 1 100%;
+    }
+}
