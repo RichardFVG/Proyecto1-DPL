@@ -6,16 +6,20 @@ body {
     padding: 0;
 }
 
+
 .login-body {
     background-color: black;
 }
 
+/* 1. Contenedor principal que centra y 
+define el ancho */
 .container {
     max-width: 800px;
     margin: 0 auto; 
     padding: 20px;
     text-align: center;
 }
+
 
 .login-container {
     max-width: 400px;
@@ -27,10 +31,12 @@ body {
     border-radius: 15px;
 }
 
+
 .header {
     text-align: center;
     margin-top: 20px;
 }
+
 
 .megmercado-title {
     color: #39FF14;
@@ -45,21 +51,26 @@ body {
     margin: 20px;
 }
 
+
 .autor {
     color: #39FF14;
     font-size: 0.8em;
 }
 
+
 form {
     margin-top: 20px;
 }
 
+/* 2. Etiquetas para formularios */
 label {
     display: block;
     margin-bottom: 5px;
     text-align: left;
 }
 
+/* 3. Inputs de texto, password, number y 
+select */
 input[type="text"],
 input[type="password"],
 input[type="number"],
@@ -71,6 +82,7 @@ select {
     border-radius: 5px;
 }
 
+/* 4. Botones de tipo submit y button */
 input[type="submit"],
 input[type="button"] {
     padding: 10px 20px;
@@ -81,22 +93,26 @@ input[type="button"] {
     cursor: pointer;
 }
 
+/* 5. Efecto hover para botones */
 input[type="submit"]:hover,
 input[type="button"]:hover {
     background-color: darkblue;
 }
 
+/* 6. Mensajes de error */
 .error {
     color: red;
     text-decoration: underline;
     font-size: 0.9em;
 }
 
+/* 7. Mensajes de alerta o exito */
 .mensaje {
     color: red;
     text-decoration: underline;
 }
 
+/* 8. Estilo para texto de administrador */
 .admin {
     color: red;
     font-weight: bold;
@@ -104,18 +120,23 @@ input[type="button"]:hover {
     text-decoration: underline;
 }
 
+/* 9. Estilo para texto de usuario */
 .usuario {
     color: #0021F3;
     font-weight: bold;
     font-style: italic;
 }
 
+/* 10. Quita viñetas y márgenes de las 
+listas */
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
+/* 11. Listas para productos y carrito con 
+flexbox */
 .product-list,
 .cart-list {
     display: flex;
@@ -123,6 +144,8 @@ ul {
     justify-content: center;
 }
 
+/* 12. Ítems individuales de producto y de 
+carrito */
 .product-item,
 .cart-item {
     flex: 1 1 calc(33% - 20px);
@@ -133,6 +156,8 @@ ul {
     text-align: center;
 }
 
+/* 13. Imágenes dentro de cada item de producto 
+o carrito */
 .product-item img,
 .cart-item img {
     max-width: 100%;
@@ -140,7 +165,7 @@ ul {
     margin-bottom: 10px;
 }
 
-/* Enlaces */
+/* 14. Enlaces */
 a {
     color: blue;
     text-decoration: none;
@@ -152,7 +177,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Media queries para responsividad */
+/* 15. Media queries para responsividad */
 @media (max-width: 768px) {
     .product-item,
     .cart-item {

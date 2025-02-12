@@ -1,32 +1,33 @@
 <?php
-// 1. Inicia o reanuda una sesión existente
-session_start();
+    // 1. Inicia o reanuda una sesión existente
+    session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    header('Location: login.php');
-    exit();
-}
+    if (!isset($_SESSION['usuario'])) {
+        header('Location: login.php');
+        exit();
+    }
 
-// 2. Obtiene las preferencias de idioma y estilo 
-// desde las cookies o establece valores por 
-// defecto
-$idioma = 
-isset($_COOKIE['idioma']) && in_array(
-    $_COOKIE['idioma'], ['es', 'en']
-) ? $_COOKIE['idioma'] : 'es';
+    // 2. Obtiene las preferencias de idioma y estilo 
+    // desde las cookies o establece valores por 
+    // defecto
+    $idioma = 
+    isset($_COOKIE['idioma']) && in_array(
+        $_COOKIE['idioma'], ['es', 'en']
+    ) ? $_COOKIE['idioma'] : 'es';
 
-$estilo = 
-isset($_COOKIE['estilo']) && in_array(
-    $_COOKIE['estilo'], ['claro', 'oscuro']
-) ? $_COOKIE['estilo'] : 'claro';
+    $estilo = 
+    isset($_COOKIE['estilo']) && in_array(
+        $_COOKIE['estilo'], ['claro', 'oscuro']
+    ) ? $_COOKIE['estilo'] : 'claro';
 
-// 3. Incluye el archivo de idioma correspondiente
-include("lang/" . $idioma . ".php");
+    // 3. Incluye el archivo de idioma correspondiente
+    include("lang/" . $idioma . ".php");
 
-// 4. Incluye el archivo que contiene la lista de 
-// productos
-include('productos.php');
+    // 4. Incluye el archivo que contiene la lista de 
+    // productos
+    include('productos.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="<?php echo htmlspecialchars($idioma); ?>">
 <head>
@@ -88,6 +89,7 @@ include('productos.php');
                             '', 
                             $key
                         );
+
                         // 15. Obtiene la cantidad a eliminar 
                         // para ese producto
                         $cantidad_a_eliminar = 
@@ -116,6 +118,7 @@ include('productos.php');
                                 serialize($carrito), 
                                 time() + 3600
                             );
+
                             // 20. Muestra un mensaje indicando que 
                             // el producto ha sido actualizado
                             echo "<p class='mensaje'>" . 
@@ -149,6 +152,7 @@ include('productos.php');
                 $total_cantidad = 0;
                 $total_precio = 0;
                 echo "<ul class='cart-list'>";
+
                 // 26. Recorre cada producto en el carrito
                 foreach ($carrito as $id => $cantidad) {
                     // 27. Verifica si el producto existe en 
@@ -201,30 +205,41 @@ include('productos.php');
                         // 36. Inicia un formulario para eliminar 
                         // cantidades del producto
                         echo "<form method='post' action='carrito.php'>";
-                        echo "<input type='hidden' name='eliminar_id_$id' value='$id'>";
+
+                        echo 
+                        "<input type='hidden' name='eliminar_id_$id' value='$id'>";
+
                         echo "<label for='cantidad_$id'>" . 
                         htmlspecialchars($lang['cantidad_a_eliminar']) . 
                         ":</label>";
-                        echo "<input type='number' name='cantidad_a_eliminar_$id' id='cantidad_$id' value='1' min='1' max='$cantidad' required>";
+
+                        echo 
+                        "<input type='number' name='cantidad_a_eliminar_$id' id='cantidad_$id' value='1' min='1' max='$cantidad' required>";
+
                         echo "<input type='submit' value='" . 
                         htmlspecialchars($lang['eliminar_producto']) . 
                         "'>";
+
                         echo "</form>";
 
                         echo "</li><br>";
                     }
                 }
+
                 echo "</ul>";
+
                 // 37. Muestra el total de productos en el 
                 // carrito
                 echo "<p>" . 
                 htmlspecialchars($lang['total_productos']) . 
                 ": $total_cantidad</p>";
+
                 // 38. Muestra el precio total del carrito
                 echo "<p>" . 
                 htmlspecialchars($lang['precio_total']) . 
                 ": " . number_format($total_precio, 2) . 
                 " €</p>";
+                
                 // 39. Enlace para vaciar el carrito
                 echo "<a href='carrito.php?vaciar=1'>" . 
                 htmlspecialchars($lang['vaciar_carrito']) . 

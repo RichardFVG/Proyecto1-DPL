@@ -28,6 +28,7 @@
         // 4. Establece una cookie para el idioma con 
         // una duración de 30 días
         setcookie('idioma', $idioma, time() + (86400 * 30));
+
         // 5. Establece una cookie para el estilo con 
         // una duración de 30 días
         setcookie('estilo', $estilo, time() + (86400 * 30));
@@ -56,7 +57,7 @@
     // 8. Incluye el archivo de idioma correspondiente
     include("lang/" . $idioma_actual . ".php");
 
-    // 9. No es necesario aplicar estilo aquí, se hace 
+    // 9. No es necesario aplicar estilo aquí, lo hago 
     // en el HTML
 ?>
 
@@ -85,6 +86,7 @@
                 ); 
             ?>
         </h1>
+
         <form method="post" action="">
             <!-- 10. Selector para el idioma 
              preferido -->
@@ -95,6 +97,7 @@
                     ); 
                 ?>:
             </label>
+
             <select name="idioma" id="idioma">
                 <option value="es" <?php 
                     if ($idioma_actual == 'es') echo 'selected'; 
@@ -109,6 +112,7 @@
             </select>
             <br>
             <br>
+
             <!-- 11. Selector para el estilo 
              preferido -->
             <label for="estilo">
@@ -118,6 +122,7 @@
                     ); 
                 ?>:
             </label>
+
             <select name="estilo" id="estilo">
                 <option value="claro" <?php 
                     if ($estilo_actual == 'claro') echo 'selected'; 
@@ -140,6 +145,7 @@
             </select>
             <br>
             <br>
+
             <!-- 12. Botón para guardar las 
              preferencias -->
             <input type="submit" 
@@ -149,6 +155,7 @@
                 ); 
             ?>">
         </form>
+
         <!-- 13. Enlace para volver a la tienda -->
         <a href="index.php">
             <?php 
